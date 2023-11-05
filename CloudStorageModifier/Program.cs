@@ -11,11 +11,6 @@ namespace CloudStorageModifier
         [STAThread]
         static void Main()
         {
-            string credentials = APIHelper.Auth.GetCredentialsToken().Result;
-
-
-            MessageBox.Show(APIHelper.Auth.GetAccessToken(credentials).Result);
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Main());

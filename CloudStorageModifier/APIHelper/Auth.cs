@@ -1,13 +1,9 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System;
+﻿using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Diagnostics.SymbolStore;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace CloudStorageModifier.APIHelper
 {
@@ -82,11 +78,11 @@ namespace CloudStorageModifier.APIHelper
                         {
                             break;
                         }
-                        if (responseString.Contains("errors.com.epicgames.not_found"))
+                        else if (responseString.Contains("errors.com.epicgames.not_found"))
                         {
-                            Environment.Exit(0);
+                            return responseString;
                         }
-                        if (responseString.Contains("errors.com.epicgames.account.authorization_pending"))
+                        else if (responseString.Contains("errors.com.epicgames.account.authorization_pending"))
                         {
                             await Task.Delay(2500);
                         }
@@ -106,7 +102,9 @@ namespace CloudStorageModifier.APIHelper
 
                 using (HttpResponseMessage response = await Program.client.SendAsync(request))
                 {
-                    return JObject.Parse(await response.Content.ReadAsStringAsync())["code"].ToString();
+                    string responseString = await response.Content.ReadAsStringAsync();
+
+                    return JObject.Parse(responseString)["code"].ToString();
                 }
             }
         }
