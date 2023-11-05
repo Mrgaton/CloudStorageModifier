@@ -1,22 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Net.Http;
 using System.Windows.Forms;
 
 namespace CloudStorageModifier
 {
     internal static class Program
     {
-        /// <summary>
-        /// Punto de entrada principal para la aplicación.
-        /// </summary>
+        public static HttpClient client = new HttpClient();
+
         [STAThread]
         static void Main()
         {
+            string credentials = APIHelper.Auth.GetCredentialsToken().Result;
+
+
+            MessageBox.Show(APIHelper.Auth.GetAccessToken(credentials).Result);
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Main());
         }
     }
 }
