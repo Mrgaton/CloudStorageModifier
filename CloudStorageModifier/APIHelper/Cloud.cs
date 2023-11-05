@@ -1,12 +1,49 @@
-﻿namespace CloudStorageModifier.APIHelper
+﻿using Newtonsoft.Json.Linq;
+using System;
+using System.Drawing;
+using System.Linq;
+using System.Net.Http;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace CloudStorageModifier.APIHelper
 {
     internal class Cloud
     {
-        private static void Download()
+        private static readonly string baseUri = "https://fngw-mcp-gc-livefn.ol.epicgames.com/fortnite/api/cloudstorage";
+        public static async Task<byte[]> Download(string fileName, string accountId, string exchangeCode)
         {
+            using (HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, baseUri + "/user/" + accountId + "/" + fileName))
+            {
+                request.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("bearer", exchangeCode);
 
+                using (HttpResponseMessage response = await Program.client.SendAsync(request))
+                {
+                    return await response.Content.ReadAsByteArrayAsync();
+                }
+            }
         }
-        private static void Upload()
+        public static async Task<bool> Exist(string fileName, string accountId, string exchangeCode)
+        {
+            string fileNameLowered = fileName.ToLower();
+
+            using (HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, baseUri + "/user/" + accountId))
+            {
+                request.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("bearer", exchangeCode);
+
+                using (HttpResponseMessage response = await Program.client.SendAsync(request))
+                {
+                    string responseString = await response.Content.ReadAsStringAsync();
+
+                    Console.WriteLine(responseString);
+
+                    JArray responseArray = JArray.Parse(responseString);
+
+                    return responseArray.Children<JObject>().Any(jsonObject => jsonObject["filename"].ToString().ToLower() == fileNameLowered);
+                }
+            }
+        }
+        public static void Upload()
         {
 
         }

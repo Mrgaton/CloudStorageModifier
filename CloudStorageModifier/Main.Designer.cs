@@ -43,7 +43,9 @@
             "Android",
             "Pc",
             "GFNMobile",
-            "GFN"});
+            "GFN",
+            "XSXHelios",
+            "XSXHeliosMobile"});
             this.CloudTypeComboBox.Location = new System.Drawing.Point(31, 51);
             this.CloudTypeComboBox.Name = "CloudTypeComboBox";
             this.CloudTypeComboBox.Size = new System.Drawing.Size(284, 33);
