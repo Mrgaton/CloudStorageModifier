@@ -46,7 +46,7 @@
             "GFN",
             "XSXHelios",
             "XSXHeliosMobile"});
-            this.CloudTypeComboBox.Location = new System.Drawing.Point(31, 51);
+            this.CloudTypeComboBox.Location = new System.Drawing.Point(31, 47);
             this.CloudTypeComboBox.Name = "CloudTypeComboBox";
             this.CloudTypeComboBox.Size = new System.Drawing.Size(284, 33);
             this.CloudTypeComboBox.TabIndex = 0;
@@ -57,7 +57,7 @@
             this.InfoLabel.BackColor = System.Drawing.Color.Transparent;
             this.InfoLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InfoLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.InfoLabel.Location = new System.Drawing.Point(28, 23);
+            this.InfoLabel.Location = new System.Drawing.Point(28, 19);
             this.InfoLabel.Name = "InfoLabel";
             this.InfoLabel.Size = new System.Drawing.Size(93, 21);
             this.InfoLabel.TabIndex = 1;
@@ -69,7 +69,7 @@
             this.UploadButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.UploadButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UploadButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.UploadButton.Location = new System.Drawing.Point(31, 91);
+            this.UploadButton.Location = new System.Drawing.Point(31, 87);
             this.UploadButton.Name = "UploadButton";
             this.UploadButton.Size = new System.Drawing.Size(141, 34);
             this.UploadButton.TabIndex = 2;
@@ -83,7 +83,7 @@
             this.DownloadButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.DownloadButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DownloadButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.DownloadButton.Location = new System.Drawing.Point(178, 91);
+            this.DownloadButton.Location = new System.Drawing.Point(178, 87);
             this.DownloadButton.Name = "DownloadButton";
             this.DownloadButton.Size = new System.Drawing.Size(137, 34);
             this.DownloadButton.TabIndex = 3;
