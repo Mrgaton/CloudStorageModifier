@@ -23,10 +23,9 @@ namespace CloudStorageModifier.APIHelper
                 }
             }
         }
-        public static async Task<bool> Exist(string fileName, string accountId, string exchangeCode)
+        public static async Task<bool> Exist(string fileName, string accountId, string exchangeCode) => (await List(accountId,exchangeCode)).Children<JObject>().Any(jsonObject => jsonObject["filename"].ToString().ToLower() == fileName.ToLower());
+        public static async Task<JArray> List(string accountId, string exchangeCode)
         {
-            string fileNameLowered = fileName.ToLower();
-
             using (HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, baseUri + "/user/" + accountId))
             {
                 request.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("bearer", exchangeCode);
@@ -37,15 +36,45 @@ namespace CloudStorageModifier.APIHelper
 
                     Console.WriteLine(responseString);
 
-                    JArray responseArray = JArray.Parse(responseString);
-
-                    return responseArray.Children<JObject>().Any(jsonObject => jsonObject["filename"].ToString().ToLower() == fileNameLowered);
+                    return JArray.Parse(responseString);
                 }
             }
         }
-        public static void Upload()
+        public static async Task<JObject> Create(string fileName, byte[] fileData, string accountId, string exchangeCode)
         {
+            using (HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, baseUri + "/user/" + accountId + "/" + fileName))
+            {
+                request.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("bearer", exchangeCode);
 
+                request.Content = new ByteArrayContent(fileData);
+
+                using (HttpResponseMessage response = await Program.client.SendAsync(request))
+                {
+                    string responseString = await response.Content.ReadAsStringAsync();
+
+                    Console.WriteLine(responseString);
+
+                    return JObject.Parse(responseString);
+                }
+            }
+        }
+        public static async Task<JObject> Update(string fileName, byte[] fileData, string accountId, string exchangeCode)
+        {
+            using (HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Put, baseUri + "/user/" + accountId + "/" + fileName))
+            {
+                request.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("bearer", exchangeCode);
+
+                request.Content = new ByteArrayContent(fileData);
+
+                using (HttpResponseMessage response = await Program.client.SendAsync(request))
+                {
+                    string responseString = await response.Content.ReadAsStringAsync();
+
+                    Console.WriteLine(responseString);
+
+                    return JObject.Parse(responseString);
+                }
+            }
         }
     }
 }

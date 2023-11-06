@@ -32,6 +32,7 @@
             this.InfoLabel = new System.Windows.Forms.Label();
             this.UploadButton = new System.Windows.Forms.Button();
             this.DownloadButton = new System.Windows.Forms.Button();
+            this.ListButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // CloudTypeComboBox
@@ -48,7 +49,7 @@
             "XSXHeliosMobile"});
             this.CloudTypeComboBox.Location = new System.Drawing.Point(31, 47);
             this.CloudTypeComboBox.Name = "CloudTypeComboBox";
-            this.CloudTypeComboBox.Size = new System.Drawing.Size(284, 33);
+            this.CloudTypeComboBox.Size = new System.Drawing.Size(427, 33);
             this.CloudTypeComboBox.TabIndex = 0;
             // 
             // InfoLabel
@@ -83,7 +84,7 @@
             this.DownloadButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.DownloadButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DownloadButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.DownloadButton.Location = new System.Drawing.Point(178, 87);
+            this.DownloadButton.Location = new System.Drawing.Point(321, 87);
             this.DownloadButton.Name = "DownloadButton";
             this.DownloadButton.Size = new System.Drawing.Size(137, 34);
             this.DownloadButton.TabIndex = 3;
@@ -91,12 +92,27 @@
             this.DownloadButton.UseVisualStyleBackColor = false;
             this.DownloadButton.Click += new System.EventHandler(this.DownloadButton_Click);
             // 
+            // ListButton
+            // 
+            this.ListButton.BackColor = System.Drawing.Color.DimGray;
+            this.ListButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ListButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ListButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ListButton.Location = new System.Drawing.Point(178, 87);
+            this.ListButton.Name = "ListButton";
+            this.ListButton.Size = new System.Drawing.Size(137, 34);
+            this.ListButton.TabIndex = 4;
+            this.ListButton.Text = "List";
+            this.ListButton.UseVisualStyleBackColor = false;
+            this.ListButton.Click += new System.EventHandler(this.ListButton_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
-            this.ClientSize = new System.Drawing.Size(340, 147);
+            this.ClientSize = new System.Drawing.Size(479, 144);
+            this.Controls.Add(this.ListButton);
             this.Controls.Add(this.DownloadButton);
             this.Controls.Add(this.UploadButton);
             this.Controls.Add(this.InfoLabel);
@@ -117,6 +133,7 @@
         private System.Windows.Forms.Label InfoLabel;
         private System.Windows.Forms.Button UploadButton;
         private System.Windows.Forms.Button DownloadButton;
+        private System.Windows.Forms.Button ListButton;
     }
 }
 
