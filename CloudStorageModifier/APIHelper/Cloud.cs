@@ -52,7 +52,7 @@ namespace CloudStorageModifier.APIHelper
 
                     Console.WriteLine(responseString);
 
-                    return JObject.Parse(responseString);
+                    return JObject.Parse(string.IsNullOrWhiteSpace(responseString) ? "{}" : responseString);
                 }
             }
         }
@@ -70,7 +70,7 @@ namespace CloudStorageModifier.APIHelper
 
                     Console.WriteLine(responseString);
 
-                    return JObject.Parse(responseString ?? "{}");
+                    return JObject.Parse(string.IsNullOrWhiteSpace(responseString) ? "{}" : responseString);
                 }
             }
         }

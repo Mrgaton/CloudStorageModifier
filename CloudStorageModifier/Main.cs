@@ -35,14 +35,14 @@ namespace CloudStorageModifier
 
             authExpiration = DateTime.Now.AddSeconds((double)acessTokenResponse["expires_in"]);
 
-            InfoLabel.Text = InfoLabel.Text.Split(' ').First() + " (" + acessTokenResponse["displayName"].ToString() + ")";
+            InfoLabel.Text = InfoLabel.Text.Split(' ')[0] + " (" + acessTokenResponse["displayName"].ToString() + ")";
             LogOutButton.Enabled = true;
 
             return defaultAtuth = acessTokenResponse;
         }
         private void LogOutButton_Click(object sender, EventArgs e)
         {
-            InfoLabel.Text = InfoLabel.Text.Split(' ').First();
+            InfoLabel.Text = InfoLabel.Text.Split(' ')[0];
             defaultAtuth = null;
             LogOutButton.Enabled = false;
         }
