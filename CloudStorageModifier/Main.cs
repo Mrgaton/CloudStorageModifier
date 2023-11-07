@@ -21,7 +21,7 @@ namespace CloudStorageModifier
 
         private static JObject defaultAtuth = null;
         private static DateTime authExpiration = DateTime.Now;
-        private async static Task<JObject> GetAuth()
+        private async Task<JObject> GetAuth()
         {
             if (defaultAtuth != null && authExpiration > DateTime.Now) return defaultAtuth;
 
@@ -35,7 +35,16 @@ namespace CloudStorageModifier
 
             authExpiration = DateTime.Now.AddSeconds((double)acessTokenResponse["expires_in"]);
 
+            InfoLabel.Text = InfoLabel.Text.Split(' ').First() + " (" + acessTokenResponse["displayName"].ToString() + ")";
+            LogOutButton.Enabled = true;
+
             return defaultAtuth = acessTokenResponse;
+        }
+        private void LogOutButton_Click(object sender, EventArgs e)
+        {
+            InfoLabel.Text = InfoLabel.Text.Split(' ').First();
+            defaultAtuth = null;
+            LogOutButton.Enabled = false;
         }
 
         private async void DownloadButton_Click(object sender, System.EventArgs e)
