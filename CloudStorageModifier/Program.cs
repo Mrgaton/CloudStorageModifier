@@ -1,8 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Net.Http;
 using System.Reflection;
-using System.Reflection.Emit;
 using System.Windows.Forms;
 
 namespace CloudStorageModifier
@@ -15,12 +15,21 @@ namespace CloudStorageModifier
 
         public static HttpClient client = new HttpClient();
 
+        private static string repoUri = "https://github.com/Mrgaton/CloudStorageModifier/raw/master/CloudStorageModifier/";
+
+        private static Dictionary<string, string> dependencies = new Dictionary<string, string>()
+        {
+            {"Newtonsoft.Json.dll", repoUri + "Newtonsoft.Json.dll"}
+        };
+
         [STAThread]
         static void Main()
         {
-            if (!File.Exists(Path.Combine(programFolder, "Newtonsoft.Json.dll")))
+            foreach (var dep in dependencies)
             {
+                string tarjetPath = Path.Combine(programFolder, dep.Key);
 
+                if (!File.Exists(tarjetPath)) File.WriteAllBytes(tarjetPath, client.GetByteArrayAsync(dep.Value).Result);
             }
 
             Application.EnableVisualStyles();
