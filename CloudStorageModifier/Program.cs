@@ -9,13 +9,13 @@ namespace CloudStorageModifier
 {
     internal static class Program
     {
-        public static Assembly currentAssembly = Assembly.GetExecutingAssembly();
+        public static readonly Assembly currentAssembly = Assembly.GetExecutingAssembly();
 
-        public static string programFolder = Path.GetDirectoryName(currentAssembly.Location);
+        public static readonly string programFolder = Path.GetDirectoryName(currentAssembly.Location);
 
-        public static HttpClient client = new HttpClient();
+        public static readonly HttpClient client = new HttpClient();
 
-        private static string repoUri = "https://github.com/Mrgaton/CloudStorageModifier/raw/master/CloudStorageModifier/";
+        private static readonly string repoUri = "https://github.com/Mrgaton/CloudStorageModifier/raw/master/CloudStorageModifier/";
 
         private static Dictionary<string, string> dependencies = new Dictionary<string, string>()
         {
