@@ -17,7 +17,7 @@ namespace CloudStorageModifier
 
         private static readonly string repoUri = "https://github.com/Mrgaton/CloudStorageModifier/raw/master/CloudStorageModifier/";
 
-        private static Dictionary<string, string> dependencies = new Dictionary<string, string>()
+        private static readonly Dictionary<string, string> dependencies = new Dictionary<string, string>()
         {
             {"Newtonsoft.Json.dll", repoUri + "Newtonsoft.Json.dll"}
         };

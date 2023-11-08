@@ -20,7 +20,7 @@ namespace CloudStorageModifier.APIHelper
             }
         }
 
-        public static async Task<bool> Exist(string fileName, string accountId, string exchangeCode) => (await List(accountId, exchangeCode)).Children<JObject>().Any(jsonObject => jsonObject["filename"].ToString().ToLower() == fileName.ToLower());
+        public static async Task<bool> Exist(string fileName, string accountId, string exchangeCode) => (await List(accountId, exchangeCode)).Children<JObject>().Any(jsonObject => jsonObject["filename"].ToString().ToLowerInvariant() == fileName.ToLower());
 
         public static async Task<JArray> List(string accountId, string exchangeCode)
         {
