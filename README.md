@@ -10,6 +10,9 @@
 [license]: LICENSE.md
 [project_format]: docs/ProjectFormat.md
 
+[img_codefactor]: https://www.codefactor.io/repository/github/mrgaton/CloudStorageModifier/badge
+[img_license]: https://img.shields.io/github/license/Mrgaton/CloudStorageModifier.svg?style=flat
+
 
 Fortnite Cloud Manager is a program that connects to your Epic Games account and lets you manage your Fortnite data stored in the cloud. You can view, edit, delete, and download your Fortnite data, such as your game progress, settings, preferences, replays, screenshots, and more. You can also upload your own data to the cloud and sync it across your devices.
 
