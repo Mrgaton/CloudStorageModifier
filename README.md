@@ -6,9 +6,7 @@
 ![visitors](https://visitor-badge.laobi.icu/badge?page_id=Mrgaton.CloudStorageModifier)
 
 [codefactor]: https://www.codefactor.io/repository/github/Mrgaton/CloudStorageModifier/overview
-[issues]: https://github.com/mkaring/Mrgaton/CloudStorageModifier
 [license]: LICENSE.md
-[project_format]: docs/ProjectFormat.md
 
 [img_codefactor]: https://www.codefactor.io/repository/github/mrgaton/CloudStorageModifier/badge
 [img_license]: https://img.shields.io/github/license/Mrgaton/CloudStorageModifier.svg?style=flat
