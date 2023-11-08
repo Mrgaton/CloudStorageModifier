@@ -81,7 +81,7 @@ namespace CloudStorageModifier
             }
             else
             {
-                MessageBox.Show("Cloud save file has not been found on the accoutn cloud storage", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Cloud save file has not been found on the account storage", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             //Cloud.Download(saveFileName,acessTokenResponse["account_id"].ToString(), acessTokenResponse["access_token"].ToString());

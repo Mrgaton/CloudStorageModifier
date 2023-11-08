@@ -34,6 +34,7 @@
             this.ListButton = new System.Windows.Forms.Button();
             this.UploadButton = new System.Windows.Forms.Button();
             this.LogOutButton = new System.Windows.Forms.Button();
+            this.DeleteButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // CloudTypeComboBox
@@ -88,9 +89,9 @@
             this.ListButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.ListButton.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ListButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ListButton.Location = new System.Drawing.Point(138, 92);
+            this.ListButton.Location = new System.Drawing.Point(131, 93);
             this.ListButton.Name = "ListButton";
-            this.ListButton.Size = new System.Drawing.Size(118, 34);
+            this.ListButton.Size = new System.Drawing.Size(125, 34);
             this.ListButton.TabIndex = 4;
             this.ListButton.Text = "List";
             this.ListButton.UseVisualStyleBackColor = false;
@@ -125,12 +126,27 @@
             this.LogOutButton.UseVisualStyleBackColor = false;
             this.LogOutButton.Click += new System.EventHandler(this.LogOutButton_Click);
             // 
+            // DeleteButton
+            // 
+            this.DeleteButton.BackColor = System.Drawing.Color.DimGray;
+            this.DeleteButton.Enabled = false;
+            this.DeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.DeleteButton.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.DeleteButton.Location = new System.Drawing.Point(262, 94);
+            this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.Size = new System.Drawing.Size(156, 34);
+            this.DeleteButton.TabIndex = 6;
+            this.DeleteButton.Text = "Delete";
+            this.DeleteButton.UseVisualStyleBackColor = false;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
             this.ClientSize = new System.Drawing.Size(435, 148);
+            this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.LogOutButton);
             this.Controls.Add(this.ListButton);
             this.Controls.Add(this.DownloadButton);
@@ -155,6 +171,7 @@
         private System.Windows.Forms.Button ListButton;
         private System.Windows.Forms.Button UploadButton;
         private System.Windows.Forms.Button LogOutButton;
+        private System.Windows.Forms.Button DeleteButton;
     }
 }
 

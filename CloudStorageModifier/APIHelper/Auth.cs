@@ -36,6 +36,7 @@ namespace CloudStorageModifier.APIHelper
         }
 
         public static async Task<JObject> GetAccessToken() => await GetAccessToken(await GetCredentialsToken());
+
         public static async Task<JObject> GetAccessToken(string credentialsToken)
         {
             using (HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, baseUri + "/account/api/oauth/deviceAuthorization"))
@@ -101,6 +102,7 @@ namespace CloudStorageModifier.APIHelper
         }
 
         public static async Task<JObject> GetExchangeCode() => await GetExchangeCode((await GetAccessToken())["access_token"].ToString());
+
         public static async Task<JObject> GetExchangeCode(string accessToken)
         {
             using (HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, baseUri + "/account/api/oauth/exchange"))
