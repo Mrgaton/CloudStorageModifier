@@ -19,9 +19,10 @@ namespace CloudStorageModifier
             InitializeComponent();
         }
 
-        private static JObject defaultAtuth = null;
-        private static DateTime authExpiration = DateTime.Now;
-        private async Task<JObject> GetAuth()
+        private JObject defaultAtuth;
+        private DateTime authExpiration;
+
+        private  async Task<JObject> GetAuth()
         {
             if (defaultAtuth != null && authExpiration > DateTime.Now) return defaultAtuth;
 
@@ -40,6 +41,7 @@ namespace CloudStorageModifier
 
             return defaultAtuth = acessTokenResponse;
         }
+
         private void LogOutButton_Click(object sender, EventArgs e)
         {
             InfoLabel.Text = InfoLabel.Text.Split(' ')[0];
@@ -83,8 +85,6 @@ namespace CloudStorageModifier
             {
                 MessageBox.Show("Cloud save file has not been found on the account storage", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            //Cloud.Download(saveFileName,acessTokenResponse["account_id"].ToString(), acessTokenResponse["access_token"].ToString());
         }
 
         private static string AskSaveFile(string path, string defaultFileName, string filter)
@@ -102,7 +102,6 @@ namespace CloudStorageModifier
                 return dialog.FileName;
             }
         }
-
 
         private async void UploadButton_Click(object sender, System.EventArgs e)
         {
@@ -140,8 +139,8 @@ namespace CloudStorageModifier
             }
 
             if (response["errorMessage"] != null) MessageBox.Show(response["errorMessage"].ToString(), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
-
         }
+
         private static string AskOpenFile(string path, string filter)
         {
             using (OpenFileDialog dialog = new OpenFileDialog())
@@ -154,6 +153,7 @@ namespace CloudStorageModifier
                 return dialog.FileName;
             }
         }
+
         private async void ListButton_Click(object sender, System.EventArgs e)
         {
             JObject acessTokenResponse = await GetAuth();
@@ -164,12 +164,10 @@ namespace CloudStorageModifier
                 return;
             }
 
-
             MessageBox.Show("This is the availables cloudFiles on the account:\n\n (" + string.Join(", ", (await Cloud.List(acessTokenResponse["account_id"].ToString(), acessTokenResponse["access_token"].ToString())).Children<JObject>().Select(jsonObject => GetFileType(jsonObject["filename"].ToString()))) + ")", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private static void NullCloudType() => MessageBox.Show("Error cloud type is null", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
-
 
         private static Dictionary<string, string> typesFileNames = new Dictionary<string, string>()
         {
@@ -184,7 +182,9 @@ namespace CloudStorageModifier
             {"PS4","ClientSettingsPS4.sav"},
             {"PS5","ClientSettingsPS5.sav"}
         };
+
         private static string GetFileName(string type) => typesFileNames.TryGetValue(type, out string value) ? value : null;
+
         private static string GetFileType(string name) => (!name.StartsWith("ClientSettings") || name.Length <= 18) ? (typesFileNames.FirstOrDefault(file => file.Value == name).Key ?? Path.GetFileNameWithoutExtension(name)) : string.Join("", name.Skip(14).Take(name.Length - (18)));
     }
 }

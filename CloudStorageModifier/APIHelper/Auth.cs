@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CloudStorageModifier.APIHelper
 {
-    internal class Auth
+    internal static class Auth
     {
         public static readonly string baseUri = "https://account-public-service-prod.ol.epicgames.com";
 

@@ -23,7 +23,7 @@ namespace CloudStorageModifier
         };
 
         [STAThread]
-        static void Main()
+        private static void Main()
         {
             foreach (var dep in dependencies)
             {

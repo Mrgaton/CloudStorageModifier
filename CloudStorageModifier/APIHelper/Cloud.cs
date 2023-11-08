@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CloudStorageModifier.APIHelper
 {
-    internal class Cloud
+    internal static class Cloud
     {
         private static readonly string baseUri = "https://fngw-mcp-gc-livefn.ol.epicgames.com/fortnite/api/cloudstorage";
 
