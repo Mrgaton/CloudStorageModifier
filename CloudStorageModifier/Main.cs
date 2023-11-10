@@ -22,7 +22,7 @@ namespace CloudStorageModifier
         private JObject defaultAtuth;
         private DateTime authExpiration;
 
-        private  async Task<JObject> GetAuth()
+        private async Task<JObject> GetAuth()
         {
             if (defaultAtuth != null && authExpiration > DateTime.Now) return defaultAtuth;
 
