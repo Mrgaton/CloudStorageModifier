@@ -169,7 +169,7 @@ namespace CloudStorageModifier
 
         private static void NullCloudType() => MessageBox.Show("Error cloud type is null", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-        private static Dictionary<string, string> typesFileNames = new Dictionary<string, string>()
+        private static Dictionary<string, string> typesFileNames = new Dictionary<string, string>
         {
             {"Switch" ,"ClientSettingsSwitch.Sav"},
             {"Android" ,"ClientSettingsAndroid.Sav"},
