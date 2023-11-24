@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{88CE7DAA-95FC-41B6-A2E7-73FAF00DD922}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>CloudStorageModifier</RootNamespace>
     <AssemblyName>CloudStorageModifier</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>

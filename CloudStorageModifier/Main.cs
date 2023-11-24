@@ -139,6 +139,7 @@ namespace CloudStorageModifier
             }
 
             if (response["errorMessage"] != null) MessageBox.Show(response["errorMessage"].ToString(), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else MessageBox.Show("Successfully uploaded cloud Save",Application.ProductName,MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
 
         private static string AskOpenFile(string path, string filter)
