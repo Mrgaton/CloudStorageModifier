@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="APIHelper\Auth.cs" />
+    <Compile Include="APIHelper\Caldera.cs" />
     <Compile Include="APIHelper\Cloud.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -100,7 +101,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CloudStorageModifier.exe" />
     <Content Include="Newtonsoft.Json.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
