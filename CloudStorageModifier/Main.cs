@@ -265,6 +265,7 @@ namespace CloudStorageModifier
         private static string GetFileType(string name) => (!name.StartsWith("ClientSettings") || name.Length <= 18) ? (typesFileNames.FirstOrDefault(file => file.Value == name).Key ?? Path.GetFileNameWithoutExtension(name)) : string.Join("", name.Skip(14).Take(name.Length - (18)));
 
         private static string FortniteLogsPath = Path.Combine(Environment.GetFolderPath(SpecialFolder.LocalApplicationData), "FortniteGame\\Saved\\Logs\\FortniteLauncher.log");
+
         private async void LaunchFnButton_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure you want to launch fortnite?", Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes) return;
