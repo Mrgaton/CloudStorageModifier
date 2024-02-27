@@ -186,7 +186,7 @@
             this.LaunchFnButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.LaunchFnButton.Location = new System.Drawing.Point(17, 257);
             this.LaunchFnButton.Name = "LaunchFnButton";
-            this.LaunchFnButton.Size = new System.Drawing.Size(141, 33);
+            this.LaunchFnButton.Size = new System.Drawing.Size(141, 37);
             this.LaunchFnButton.TabIndex = 9;
             this.LaunchFnButton.Text = "Launch FN";
             this.LaunchFnButton.UseVisualStyleBackColor = false;
@@ -230,7 +230,7 @@
             this.ActualAnticheatButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.ActualAnticheatButton.Location = new System.Drawing.Point(164, 257);
             this.ActualAnticheatButton.Name = "ActualAnticheatButton";
-            this.ActualAnticheatButton.Size = new System.Drawing.Size(116, 33);
+            this.ActualAnticheatButton.Size = new System.Drawing.Size(116, 37);
             this.ActualAnticheatButton.TabIndex = 12;
             this.ActualAnticheatButton.Text = "Actual AC";
             this.ActualAnticheatButton.UseVisualStyleBackColor = false;

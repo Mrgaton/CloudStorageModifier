@@ -309,7 +309,7 @@ namespace CloudStorageModifier
 
             //This has to change from every build sooooo xd
 
-            Process.Start("FortniteLauncher.exe", $"-obfuscationid={obfuscationId} -AUTH_LOGIN=unused -AUTH_PASSWORD={(await Auth.GetExchangeCode(reAcessToken["access_token"].ToString()))["code"].ToString()} -AUTH_TYPE=exchangecode -epicapp=Fortnite -epicenv=Prod -EpicPortal -epicusername={accountName} -epicuserid={accountId} -epiclocale=en -epicsandboxid=fn");
+            Process.Start("FortniteLauncher.exe", $"-obfuscationid={obfuscationId} -AUTH_LOGIN=unused -AUTH_PASSWORD={(await Auth.GetExchangeCode(reAcessToken["access_token"].ToString()))["code"].ToString()} -AUTH_TYPE=exchangecode -epicapp=Fortnite -epicenv=Prod -EpicPortal -epicusername={accountName} -epicuserid={accountId} -epiclocale=en -epicsandboxid=fn -skippatchcheck");
         }
 
         private async void CreateDeviceAuthButton_Click(object sender, EventArgs e)
