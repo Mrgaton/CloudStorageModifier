@@ -59,5 +59,15 @@ namespace CloudStorageModifier.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap K1R4FN_ACsplash {
+            get {
+                object obj = ResourceManager.GetObject("K1R4FN ACsplash", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
