@@ -353,20 +353,5 @@ namespace CloudStorageModifier
 
             await LoginDeviceAuth(tarjetSession);
         }
-
-        private void Main_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DeleteButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void loginInfoLabel_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

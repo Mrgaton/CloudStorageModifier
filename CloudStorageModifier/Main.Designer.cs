@@ -236,7 +236,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
-            this.BackgroundImage = global::CloudStorageModifier.Properties.Resources.K1R4FN_ACsplash;
+            this.BackgroundImage = global::CloudStorageModifier.Properties.Resources.background;
             this.ClientSize = new System.Drawing.Size(800, 452);
             this.Controls.Add(this.AccountSelectorComboBox);
             this.Controls.Add(this.CreateDeviceAuthButton);
