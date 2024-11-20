@@ -26,7 +26,7 @@ namespace CloudStorageModifier
             loginNeededButtons.Add(DownloadButton);
             loginNeededButtons.Add(UploadButton);
             loginNeededButtons.Add(LaunchFnButton);
-            loginNeededButtons.Add(ActualAnticheatButton);
+            //loginNeededButtons.Add(ActualAnticheatButton);
 
             ReloadAccounts();
         }
@@ -352,6 +352,21 @@ namespace CloudStorageModifier
             string tarjetSession = File.ReadAllText(Path.Combine(Program.programFolder, AccountSelectorComboBox.SelectedItem + ".device"));
 
             await LoginDeviceAuth(tarjetSession);
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void loginInfoLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
