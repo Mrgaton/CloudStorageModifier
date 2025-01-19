@@ -45,6 +45,7 @@
             // 
             // CloudTypeComboBox
             // 
+            this.CloudTypeComboBox.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.CloudTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CloudTypeComboBox.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CloudTypeComboBox.FormattingEnabled = true;
@@ -59,9 +60,9 @@
             "IOS",
             "PS4",
             "PS5"});
-            this.CloudTypeComboBox.Location = new System.Drawing.Point(176, 333);
+            this.CloudTypeComboBox.Location = new System.Drawing.Point(163, 333);
             this.CloudTypeComboBox.Name = "CloudTypeComboBox";
-            this.CloudTypeComboBox.Size = new System.Drawing.Size(502, 33);
+            this.CloudTypeComboBox.Size = new System.Drawing.Size(515, 33);
             this.CloudTypeComboBox.TabIndex = 0;
             // 
             // cloudInfoLabel
@@ -168,7 +169,7 @@
             this.LoginLinkButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.LoginLinkButton.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold);
             this.LoginLinkButton.ForeColor = System.Drawing.Color.White;
-            this.LoginLinkButton.Location = new System.Drawing.Point(359, 203);
+            this.LoginLinkButton.Location = new System.Drawing.Point(326, 203);
             this.LoginLinkButton.Name = "LoginLinkButton";
             this.LoginLinkButton.Size = new System.Drawing.Size(144, 37);
             this.LoginLinkButton.TabIndex = 8;
@@ -212,9 +213,9 @@
             this.CreateDeviceAuthButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.CreateDeviceAuthButton.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold);
             this.CreateDeviceAuthButton.ForeColor = System.Drawing.Color.White;
-            this.CreateDeviceAuthButton.Location = new System.Drawing.Point(536, 203);
+            this.CreateDeviceAuthButton.Location = new System.Drawing.Point(475, 203);
             this.CreateDeviceAuthButton.Name = "CreateDeviceAuthButton";
-            this.CreateDeviceAuthButton.Size = new System.Drawing.Size(142, 37);
+            this.CreateDeviceAuthButton.Size = new System.Drawing.Size(203, 37);
             this.CreateDeviceAuthButton.TabIndex = 11;
             this.CreateDeviceAuthButton.Text = "Create Device";
             this.CreateDeviceAuthButton.UseVisualStyleBackColor = false;
@@ -222,6 +223,7 @@
             // 
             // AccountSelectorComboBox
             // 
+            this.AccountSelectorComboBox.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.AccountSelectorComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.AccountSelectorComboBox.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AccountSelectorComboBox.FormattingEnabled = true;

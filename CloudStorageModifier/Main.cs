@@ -81,6 +81,8 @@ namespace CloudStorageModifier
             }
 
             LoginDeviceAuth(File.ReadAllText(filePath));
+
+            ReloadAccounts();
         }
 
         private async Task LoginDeviceAuth(string fileData)
@@ -88,6 +90,8 @@ namespace CloudStorageModifier
             string[] deviceAuthData = fileData.Split(':');
 
             LoginDeviceAuth(deviceAuthData[0], deviceAuthData[1], deviceAuthData[2]);
+
+            ReloadAccounts();
         }
 
         private async Task LoginDeviceAuth(string deviceId, string accountId, string secret)
@@ -328,6 +332,8 @@ namespace CloudStorageModifier
             var device = await Auth.CreateDeviceAuth(auth["access_token"].ToString(), auth["account_id"].ToString());
 
             File.WriteAllText(destPath, (string)device["deviceId"] + ":" + (string)device["accountId"] + ":" + (string)device["secret"]);
+
+            ReloadAccounts();
         }
 
         private async void ActualAnticheatButton_Click(object sender, EventArgs e)
